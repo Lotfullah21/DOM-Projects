@@ -1,0 +1,290 @@
+body {
+  padding: 3rem 4rem;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Cherry+Swash:400|Scada:400");
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+:root {
+  /* primary */
+  --clr--primary-100: #a1bdef;
+  --clr--primary-200: #8aadeb;
+  --clr--primary-300: #5b8ce3;
+  --clr--primary-400: #447cdf;
+  --clr--primary-500: #2c6bdb;
+  --clr--primary-600: #1352c2;
+  --clr--primary-700: #1352c2;
+  --clr--primary-800: #1149ac;
+  --clr--primary-900: #0b2e6c;
+  --clr--primary-1000: #04122b;
+  /* grey */
+  --clr--grey-50: #f9fafb;
+  --clr--grey-100: #f3f4f6;
+  --clr--grey-200: #e5e7eb;
+  --clr--grey-300: #d1d5db;
+  --clr--grey-400: #9ca3af;
+  --clr--grey-500: #6b7280;
+  --clr--grey-600: #4b5563;
+  --clr--grey-700: #374151;
+  --clr--grey-800: #1f2937;
+  --clr--grey-900: #111827;
+  --clr--grey-950: #030712;
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+  --headingFont: "Scada", sans-serif;
+  --bodyFont: "Cherry Swash", sans-serif;
+  /* some other variables */
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1.1px;
+  --transition: 1.2s all linear;
+  --smallText: 0.8em;
+  --max-width: 1172px;
+  --fixed-width: 600px;
+  /* important variables */
+  --backgroundColor: var(--clr--grey-50);
+  --textColor: var(--clr--grey-950);
+  /* box shadow */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-linear: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+body {
+  margin: 2rem 0;
+  background: var(--backgroundColor);
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--textColor);
+}
+
+p {
+  margin-bottom: 1.5rem;
+  max-width: 40em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  margin-bottom: 1.4rem;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+/* to remove under scores */
+a {
+  text-decoration: none;
+}
+
+/* to remove the bullet points */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* images by default are going to use their own width and height */
+/* control by their parent container,which means take only as much is your parent can take. */
+
+.container {
+  width: 50vw;
+  border: 2px solid rgb(8, 192, 8);
+  border-radius: var(--borderRadius);
+  max-width: var(--max-width);
+}
+img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+}
+
+/* buttons */
+/* if we do not add display block, there will be some empty space in bottom of the image around borders. */
+
+.btn {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--clr--primary-500);
+  border: transparent;
+  border-radius: var(--borderRadius);
+  padding: 0.475rem 0.7rem;
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  /* add this so that the margin can be respected and based on browser, it can be positioned. */
+
+  display: inline-block;
+  /* or */
+  /* display: block;
+  width: 200px;
+  margin: 0 auto; */
+}
+
+.btn:hover {
+  background: var(--clr--primary-900);
+  box-shadow: var(--shadow-2xl);
+}
+
+.btn-hepster {
+  color: var(--clr--primary-500);
+  background: var(--clr--primary-100);
+}
+
+.btn-hepster:hover {
+  color: var(--clr--primary-200);
+  background: var(--clr--primary-700);
+}
+
+/* alers */
+
+.alert {
+  padding: 0.374rem 0.7rem;
+  margin-bottom: 1rem;
+  border: transparent;
+  border-radius: var(--borderRadius);
+}
+.alert-danger {
+  background: rgb(236, 167, 167);
+  color: rgb(118, 0, 0);
+}
+
+.alert-success {
+  background: rgb(184, 251, 184);
+  color: rgb(2, 74, 2);
+}
+
+/* form */
+
+.form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem 2.4rem;
+  margin: 3rem auto;
+}
+.form .btn {
+  display: block;
+  margin: 0 auto;
+}
+.form-title {
+  width: 200px;
+  margin: 1rem auto;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--smallText);
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.475rem 0.87rem;
+  background: var(--clr--grey-50);
+  border: 1px solid var(--clr--grey-200);
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-textarea {
+  height: 6rem;
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--clr--grey-400);
+}
+
+.form-alert {
+  color: rgb(234, 89, 89);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+}
+
+.form-input {
+  outline: none;
+  /* border: none; */
+}
+
+.form-textarea {
+  outline: none;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  height: 5rem;
+  width: 5rem;
+  border-radius: var(--borderRadius);
+  color: var(--clr--primary-300);
+  border: 4px solid;
+  border-radius: 50%;
+  border-top-color: var(--clr--primary-900);
+  animation: spinner 0.6s linear infinite;
+}
+
+/* we can center the elements using a container element, or {margin:0 auto} */
+
+.loading {
+  margin: 0 auto;
+}

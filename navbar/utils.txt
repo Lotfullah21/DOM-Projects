@@ -1,0 +1,7 @@
+
+shades generator:
+{
+https://mdigi.tools/color-shades/#ff0000,
+https://tailwindcss.com/docs/customizing-colors,
+https://mdigi.tools/color-shades/#00ffff
+}
