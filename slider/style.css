@@ -138,11 +138,11 @@ ul {
 /* images by default are going to use their own width and height */
 /* control by their parent container,which means take only as much is your parent can take. */
 
-img:not(.nav-photo) {
+img:not(.machine-img) {
   width: 100%;
-  height: 400px;
+}
+img {
   display: block;
-  object-fit: cover;
 }
 
 /* if we do not add display block, there will be some empty space in bottom of the image around borders. */
@@ -216,8 +216,10 @@ Form control
   position: absolute;
   height: 100%;
   width: 100%;
-  background: var(--clr--green-dark);
+  background: var(--clr--primary-400);
+  color: var(--clr-white);
   display: grid;
+  transition: var(--transition);
   align-items: center;
   justify-items: center;
   text-align: center;
@@ -227,13 +229,91 @@ Form control
   height: 100%;
   object-fit: cover;
 }
-/* 
-===============
-Form control
-===============
-*/
-/* 
-===============
-Form control
-===============
-*/
+
+.slide h1 {
+  font-size: 4rem;
+}
+
+.machine-img {
+  border-radius: 50%;
+  width: 14rem;
+  height: 8rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.slide:nth-child(1) h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slide:nth-child(3) {
+  background: linear-gradient(rgba(25, 99, 25, 0.597)),
+    url(../assets/images/dl-2.jpeg) center/cover no-repeat;
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+  margin-top: 1.4rem;
+}
+
+.prev-btn,
+.next-btn {
+  font-size: 1.54rem;
+  border: var(--borderRadius);
+  background: var(--clr--grey-900);
+  padding: 0.2rem 0.8rem;
+  border-radius: var(--borderRadius);
+  color: var(--clr--primary-200);
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: var(--transition);
+  letter-spacing: var(--letterSpacing);
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: var(--clr--primary-600);
+  background: var(--clr--grey-400);
+}
+
+@media screen and (min-width: 576px) {
+  .slider-container {
+    height: 40vh;
+  }
+}
+
+@media screen and (min-width: 776px) {
+  .slider-container {
+    height: 45vh;
+  }
+}
+
+@media screen and (min-width: 976px) {
+  .slider-container {
+    height: 50vh;
+  }
+}
+
+/* .slide:nth-child(1) {
+  left: 0%;
+}
+.slide:nth-child(2) {
+  left: 100%;
+}
+.slide:nth-child(3) {
+  left: 200%;
+}
+.slide:nth-child(4) {
+  left: 300%;
+}
+
+.slide {
+  transform: translate(-100%);
+} */
