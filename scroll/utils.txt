@@ -1,0 +1,52 @@
+// ******************** SET DATE ************************
+const date = new Date().getFullYear();
+const footerDate = document.getElementById("date");
+
+footerDate.innerHTML = date;
+
+// ******************** CLOSE NAVBAR ************************
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+const socialIcons = document.querySelector(".social-icons");
+const navContainer = document.querySelector(".navlinks-container");
+navToggle.addEventListener("click", function () {
+  if (navLinks.classList.contains("show-links-nav")) {
+    navLinks.classList.remove("show-links-nav");
+    socialIcons.classList.remove("show-links-icons");
+  } else {
+    navLinks.classList.add("show-links-nav");
+    socialIcons.classList.add("show-links-icons");
+  }
+});
+
+
+
+// ******************** Improved  Navbar ************************
+// ******************** SET DATE ************************
+const date = new Date().getFullYear();
+const footerDate = document.getElementById("date");
+
+footerDate.innerHTML = date;
+
+// ******************** CLOSE NAVBAR ************************
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+const socialIcons = document.querySelector(".social-icons");
+const navContainer = document.querySelector(".navlinks-container");
+
+navToggle.addEventListener("click", function () {
+  //   navContainer.classList.toggle("show-nav-container");
+  const navContainerHeight = navContainer.getBoundingClientRect().height;
+  const linksHeight = navLinks.getBoundingClientRect().height;
+  const sociaIconsHeight = socialIcons.getBoundingClientRect().height;
+  const totalHeight = linksHeight + sociaIconsHeight;
+    console.log(`${totalHeight}px`);
+    
+  if (navContainerHeight === 0) {
+    navContainer.style.height = `${totalHeight}px`;
+  } else {
+    navContainer.style.height = 0;
+  }
+});
+
+// ******************** FIXED NAVBAR ************************
