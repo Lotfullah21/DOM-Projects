@@ -135,14 +135,19 @@ ul {
   padding: 0;
 }
 
+/* 
+===============
+Images
+===============
+*/
+
 /* images by default are going to use their own width and height */
 /* control by their parent container,which means take only as much is your parent can take. */
-
-img:not(.nav-photo) {
+img {
   width: 100%;
-  height: 400px;
   display: block;
   object-fit: cover;
+  height: 100%;
 }
 
 /* if we do not add display block, there will be some empty space in bottom of the image around borders. */
@@ -169,31 +174,152 @@ img:not(.nav-photo) {
   background: black;
 }
 
-body {
-  background: var(--clr--grey-200);
-}
 /* 
 ===============
-Container
+Section
 ===============
 */
 
-.container {
-  width: 30rem;
-  height: 16rem;
+.section {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 6rem 0;
   display: grid;
-  grid-template-rows: auto auto auto;
-  margin: 4rem auto;
-  box-shadow: var(--shadow-lg);
   justify-content: center;
   align-items: center;
-  justify-items: center;
-  background: white;
+  gap: 2rem;
 }
 
-.value {
-  font-size: 4rem;
-  background: var(--clr--primary-900);
-  color: white;
-  padding: 0 6rem;
+.img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.img:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section {
+    width: 95vw;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .next-btn {
+    right: -5rem;
+  }
+  .prev-btn {
+    left: -5rem;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  transition: var(--transition);
+  opacity: 0;
+  min-height: 100vh;
+  overflow: scroll;
+}
+
+.modal.open {
+  z-index: 100;
+  opacity: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: var(--clr-white);
+  background: transparent;
+  cursor: pointer;
+  border-color: transparent;
+}
+
+.next-btn,
+.prev-btn {
+  position: absolute;
+  top: 10rem;
+  color: var(--clr-white);
+  border-bottom: transparent;
+  background: transparent;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.prev-btn {
+  left: -3rem;
+}
+
+.next-btn {
+  right: -3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .prev-btn {
+    left: -4rem;
+  }
+  .next-btn {
+    right: -4rem;
+  }
+}
+
+.modal-content {
+  position: relative;
+  width: 83%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+
+.main-img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: var(--borderRadius);
+}
+
+.image-name {
+  color: wheat;
+  margin: 1rem 0 3rem;
+  text-align: center;
+}
+
+.modal-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.modal-img {
+  height: 10rem;
+  opacity: 0.4;
+  transition: var(--transition);
+  cursor: pointer;
+  object-fit: cover;
+  object-position: center;
+}
+
+.modal-img:hover {
+  opacity: 0.6;
+}
+.modal-img.selected {
+  opacity: 1;
 }
