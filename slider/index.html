@@ -3,43 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Grocery bud</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Slider</title>
   </head>
   <body>
-    <div class="slider-container">
-      <div class="slide">
-        <div>
-          <img src="../assets/images/ml-2.jpg" class="slide-img" alt="" />
-        </div>
-        <h1>1</h1>
+    <section class="slider">
+      <div class="reviews">
+        <h2><span>/</span>Reviews</h2>
       </div>
-      <div class="slide">
-        <p>hello</p>
-        <h1>10</h1>
+      <div class="slider-container">
+        <!-- start of article -->
+        <article class="slide active">
+          <img
+            src="./assets/images/dl-6.jpg"
+            alt="person-image"
+            class="person-img"
+          />
+          <h4 class="name">Deep learning</h4>
+          <p class="job">knowledge</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias totam
+            aliquid inventore qui quos error enim maxime at eos similique quae
+            amet odio dolorum possimus eum, neque temporibus ducimus minima
+            corporis quod quaerat.
+          </p>
+          <div class="quote-icon">
+            <div class="fas fa-quote-right"></div>
+          </div>
+        </article>
+        <!-- end of article -->
       </div>
-      <div class="slide">
-        <h1>2</h1>
-      </div>
-      <div class="slide">
-        <div>
-          <img src="../assets/images/ml-4.jpeg" class="machine-img" alt="" />
-        </div>
-        <h4>machine learning</h4>
-        <h1>3</h1>
-      </div>
-    </div>
-    <div class="btn-container">
-      <button type="button" class="prev-btn">prev</button>
-      <button type="button" class="next-btn">next</button>
-    </div>
-    <script src="./app.js"></script>
+      <!-- prev-next button -->
+      <button class="btn prev-btn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="btn next-btn">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </section>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
