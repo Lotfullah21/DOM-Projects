@@ -50,6 +50,15 @@ sideBarLinks.innerHTML = sublinksData;
 
 linkBtns.forEach((btn) => {
   btn.addEventListener("mouseover", function (e) {
+    const text = e.currentTarget.textContent;
+    // get the dimension of the each btn and add the submenu to them
+    const bounding = e.currentTarget.getBoundingClientRect();
+    const bottom = bounding.bottom - 2;
+    const center = (bounding.right + bounding.left) / 2;
+    console.log(bounding, bottom, center, bounding.right);
     console.log(e.currentTarget);
+    subMenu.classList.add("show");
+    subMenu.style.left = `${center}px`;
+    subMenu.style.top = `${bottom}px`;
   });
 });
