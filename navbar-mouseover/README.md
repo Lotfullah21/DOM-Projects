@@ -33,5 +33,5 @@ z-index:-90}</code> so that this is responsible for being visible once we clicke
 <li>here, we say while mouse moving on the elements, if the text inside the button === the page property inside the 'data.js' then shows us the sub</li>
 <li>we use the 'tempPage' which has properties of {page,links}</li>
 <li><code> if (tempPage) </code>,if tempPage exists, then change the context of the 'Submenu' to the page and its elements.</li>
-<li><code>if (!e.target.classList.contains("btn-link"))</code> if the elemnets in the navbar we are hovering does not have class of 'btn-link',then remove the 'show' class from it.</li>
+<li><code>if (!e.target.classList.contains("btn-link"))<code> if the elemnets in the navbar we are hovering does not have class of 'btn-link',then remove the 'show' class from it.</li>
 </ol>

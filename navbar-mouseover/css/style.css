@@ -365,7 +365,7 @@ navbar Media query
     letter-spacing: var(--letterSpacing);
     width: 6.7rem;
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     text-transform: capitalize;
   }
@@ -382,13 +382,16 @@ navbar Media query
 
 @media screen and (min-width: 1100px) {
   .nav-center {
-    width: 95vw;
+    width: 92vw;
   }
   .nav-links {
     column-gap: 1.4rem;
   }
+  .nav-header h2 {
+    font-size: 1.5rem;
+  }
   .btn-link {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
 }
 @media screen and (min-width: 1300px) {
@@ -398,8 +401,11 @@ navbar Media query
   .nav-links {
     column-gap: 2rem;
   }
+  .nav-header h2 {
+    font-size: 2rem;
+  }
   .btn-link {
-    font-size: 1.65rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -432,14 +438,14 @@ Hero media
   .hero-center {
     grid-template-columns: 2fr 1fr;
     align-items: end;
-    padding-bottom: 12vh;
+    padding-bottom: 15vh;
   }
   .hero-info h1 {
     max-width: 100%;
-    font-size: 4.5rem;
+    font-size: 2.5rem;
   }
   .hero-info p {
-    font-size: 1.3rem;
+    font-size: 0.98rem;
   }
   .hero-image {
     align-self: end;
@@ -451,15 +457,18 @@ Hero media
 }
 @media screen and (min-width: 1300px) {
   .hero-center {
-    padding-bottom: 25vh;
-  }
-  .hero-info h1 {
-    max-width: 100%;
-    font-size: 5.5rem;
+    padding-bottom: 22vh;
   }
   .school-image {
     width: 22rem;
-    height: 30rem;
+    height: 25rem;
+  }
+  .hero-info h1 {
+    max-width: 100%;
+    font-size: 3.5rem;
+  }
+  .hero-info p {
+    font-size: 1.01rem;
   }
 }
 
