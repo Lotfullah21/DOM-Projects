@@ -1,14 +1,10 @@
 <h1>Lessons learned in this project</h1>
-<hr>
 <h2>CSS</h2>
 <ol>
 <li>for button to respect the margin, add <code>display:block<code> as by default,they comes in inline form,one use case is we can put them in center <code>margin:0 auto</code></li>
 <li>no need of adding padding to your individual nav links as it will cause other elements also to expand.
 <code>.btn-link{padding:1.2rem}</code> not recommended.
-</ol>
-<hr>
-<h2>CSS</h2>
-<ol>
+</li>
 <li>
 in hero-center in bigger screen we have added<code>align-items:end</code>which means push the alogn vertical directio to the end, if we do not add <code>padding-bottom:(some-value)</code>the elemenst will stay in the bottom which does not look good</li>
 <li>we also have added <code>background-size:contain,height:100%</code> which means background can take 100% of the hero,but it should distort photo,so we added contain</li>
@@ -27,8 +23,9 @@ z-index:-90}</code> so that this is responsible for being visible once we clicke
 <li>the length of list index words matters if we look closer at them, for instance, if we add few more words in 2nd list,the last index word will looks like it has margin from the right, inface id does not have, and the length caused that look to that element.</li>
 <li><strong>Theer is no better friend than the developer tools.</strong></li>
 </ol>
-<hr>
+
 <h2>JavaScript</h2>
+<hr>
 <ol>
 <li>while adding the links inside data.ja,keep in mind that you are sending that data to the <code>app.js</code> and from this file,you are going get access to the links, so keep the address as you are accessing the links from <code>app.js</code> not the <code>data.js</code></li>
 <li><code>  const text = e.currentTarget.textContent;</code> we are using this to get the text inside the current target which is a button and we are looking for the text</li>
