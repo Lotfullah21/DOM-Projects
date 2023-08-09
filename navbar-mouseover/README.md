@@ -5,17 +5,6 @@
 <li>for button to respect the margin, add <code>display:block<code> as by default,they comes in inline form,one use case is we can put them in center <code>margin:0 auto</code></li>
 <li>no need of adding padding to your individual nav links as it will cause other elements also to expand.
 <code>.btn-link{padding:1.2rem}</code> not recommended.
-<code></code>
-<code></code>
-
-</li>
-
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
 </ol>
 <hr>
 <h2>CSS</h2>
@@ -27,7 +16,6 @@ in hero-center in bigger screen we have added<code>align-items:end</code>which m
 Cover scales the image to completely cover the element's content box, potentially cropping parts of the image.****</li>
 
 <h4>Sidebar</h4>
-
 <li>add position fixed to the <code>.sidebar-wraper{position:fixed,
 visibility:hidden,
 z-index:-90}</code> so that this is responsible for being visible once we clicked on the toggle btn.</li>
@@ -37,28 +25,16 @@ z-index:-90}</code> so that this is responsible for being visible once we clicke
 <li>add position relative to the sidebar so that we can have <code>.close-btn{position:absolute} to the right hand side of links</code></li>
 
 <li>the length of list index words matters if we look closer at them, for instance, if we add few more words in 2nd list,the last index word will looks like it has margin from the right, inface id does not have, and the length caused that look to that element.</li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li><strong>Theer is no better friend than the developer tools.</strong></li>
 </ol>
 <hr>
 <h2>JavaScript</h2>
 <ol>
 <li>while adding the links inside data.ja,keep in mind that you are sending that data to the <code>app.js</code> and from this file,you are going get access to the links, so keep the address as you are accessing the links from <code>app.js</code> not the <code>data.js</code></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li><code>  const text = e.currentTarget.textContent;</code> we are using this to get the text inside the current target which is a button and we are looking for the text</li>
+<li><code>const tempPage = sublinks.find(({ page }) => page === text);</code> 'find' method returns an object if exist, or undefined if the object does not exist.</li>
+<li>here, we say while mouse moving on the elements, if the text inside the button === the page property inside the 'data.js' then shows us the sub</li>
+<li>we use the 'tempPage' which has properties of {page,links}</li>
+<li><code> if (tempPage) </code>,if tempPage exists, then change the context of the 'Submenu' to the page and its elements.</li>
+<li><code>if (!e.target.classList.contains("btn-link"))</code> if the elemnets in the navbar we are hovering does not have class of 'btn-link',then remove the 'show' class from it.</li>
 </ol>

@@ -55,10 +55,44 @@ linkBtns.forEach((btn) => {
     const bounding = e.currentTarget.getBoundingClientRect();
     const bottom = bounding.bottom - 2;
     const center = (bounding.right + bounding.left) / 2;
-    console.log(bounding, bottom, center, bounding.right);
-    console.log(e.currentTarget);
-    subMenu.classList.add("show");
-    subMenu.style.left = `${center}px`;
-    subMenu.style.top = `${bottom}px`;
+
+    const tempPage = sublinks.find((pageprop) => {
+      const { page } = pageprop;
+      if (page === text) {
+        return page;
+      }
+    });
+
+    if (tempPage) {
+      const { page, links } = tempPage;
+      subMenu.classList.add("show");
+      subMenu.style.left = `${center}px`;
+      subMenu.style.top = `${bottom}px`;
+      let col = "col-2";
+      if (links.length == 3) {
+        col = "col-3";
+      }
+      if (links.length > 3) {
+        col = "col-4";
+      }
+      subMenu.innerHTML = `<secion><h4>${page}</h4>
+      <div class="submenu-center ${col}">${links
+        .map((link) => {
+          return `<a href="${link.url}"><i class="${link.icon}"></i>${link.label}</a>`;
+        })
+        .join("")}</div>
+      </section>`;
+    }
   });
+});
+
+// remove the submenu from hero
+
+hero.addEventListener("mouseover", function (e) {
+  subMenu.classList.remove("show");
+});
+nav.addEventListener("mouseover", function (e) {
+  if (!e.target.classList.contains("btn-link")) {
+    subMenu.classList.remove("show");
+  }
 });
